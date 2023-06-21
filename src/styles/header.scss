@@ -1,3 +1,10 @@
+.container {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+
 .header {
   padding: 20px 0;
 
@@ -9,10 +16,4 @@
     font-weight: 700;
     font-family: Montserrat;
   }
-}
-
-.container {
-  width: 1100px;
-  margin: 0 auto;
-  padding: 0 10px;
 }
