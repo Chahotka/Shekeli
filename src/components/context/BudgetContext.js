@@ -2,6 +2,11 @@ import { createContext, useReducer } from "react"
 
 const BudgetReducer = (state, action) => {
   switch(action.type) {
+    case 'ADD_EXPENSE':
+      return {
+        ...state,
+        expenses: [...state.expenses, action.expense]
+      }
     default:
       return state
   }
@@ -9,10 +14,7 @@ const BudgetReducer = (state, action) => {
 
 const initialState = {
   budget: 2000,
-  expenses : [
-    { id: 12, name: 'shopping', cost: 40 },
-    { id: 13, name: 'holiday', cost: 230 },
-  ]
+  expenses : []
 }
 
 export const BudgetContext = createContext();

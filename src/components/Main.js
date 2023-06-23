@@ -4,6 +4,7 @@ import Budget from './Main/Budget'
 function Main() {
   return (
     <>
+    {/* useCntext */}
       <Budget />
     </>
   )
