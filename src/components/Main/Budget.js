@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../../styles/budget.scss'
 import { BudgetProvider } from '../context/BudgetContext'
 import Cash from './Cash'
@@ -6,22 +6,23 @@ import Expenses from './Expenses'
 import ExpenseForm from './ExpenseForm'
 import Remaining from './Remaining'
 import Spent from './Spent'
-import { CurrencyProvider } from '../context/CurrencyContext'
+import { CurrencyContext } from '../context/CurrencyContext'
 
 function Budget() {
+  const { currency } = useContext(CurrencyContext)
+
+
   return (
     <BudgetProvider>
       <main className="main">
         <div className="main__container container">
           <section className="budget">
-            <CurrencyProvider>
-              <Cash />
-              <Remaining />
-              <Spent />
-            </CurrencyProvider>
+            <Cash currency={currency} />
+            <Remaining currency={currency} />
+            <Spent currency={currency} />
           </section>
           <section className="expenses">
-            <Expenses />
+            <Expenses currency={currency}/>
           </section>
           <section className="expenses-form">
             <ExpenseForm />

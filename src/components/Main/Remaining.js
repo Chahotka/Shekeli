@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import useRemaining from '../hooks/useRemaining'
 
-function Remaining() {
+function Remaining({ currency }) {
   const { remaining } = useRemaining()
 
   return (
-    <p className='budget__remaining budget__item'>Remaining: { remaining }</p>
+    <p className='budget__remaining budget__item'>Remaining: { remaining }{ currency }</p>
   )
 }
 
