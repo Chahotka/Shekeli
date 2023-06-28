@@ -11,6 +11,10 @@ function ExpenseForm() {
   const onSubmit = (e) => {
     e.preventDefault()
 
+    if (name.length < 1 || cost.length < 1) {
+      return
+    }
+
     const expense = {
       id: v4(),
       name: name,
@@ -33,6 +37,7 @@ function ExpenseForm() {
           type='text' 
           value={name}
           className='form__input'
+          autoComplete='off'
           placeholder='Enter an expense name'
           onChange={(e) => setName(e.target.value)}
         />

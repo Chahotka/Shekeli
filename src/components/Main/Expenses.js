@@ -3,8 +3,19 @@ import '../../styles/expenses.scss'
 import ExpenseItem from './ExpenseItem'
 import { BudgetContext } from '../context/BudgetContext'
 
-function Expenses() {
-  const { expenses } = useContext(BudgetContext)
+function Expenses({ currency }) {
+  const { expenses, dispatch } = useContext(BudgetContext)
+
+  const deleteHandler = (id) => {
+    const newExpenses = expenses.filter(expense => {
+      return expense.id !== id
+    })
+
+    dispatch({
+      type: 'DELETE_EXPENSE',
+      expenses: newExpenses,
+    })
+  }
 
   return (
     <>
@@ -13,10 +24,12 @@ function Expenses() {
         {expenses.map((expense => {
           return (
             <ExpenseItem 
-              id={expense.id} 
+              id={expense.id}
               key={expense.id}
               name={expense.name} 
               cost={expense.cost} 
+              currency={currency}
+              deleteHandler={deleteHandler}
             />
           )
         }))}

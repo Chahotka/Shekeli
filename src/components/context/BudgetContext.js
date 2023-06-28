@@ -1,11 +1,22 @@
 import { createContext, useReducer } from "react"
 
+// DELETE_EXPENSE удаляет все траты биля
+
 const BudgetReducer = (state, action) => {
   switch(action.type) {
     case 'ADD_EXPENSE':
+      localStorage.setItem('expenses', JSON.stringify([...state.expenses, action.expense]))
       return {
         ...state,
-        expenses: [...state.expenses, action.expense]
+        expenses: JSON.parse(localStorage.getItem('expenses'))
+      }
+    
+      case 'DELETE_EXPENSE':
+      localStorage.setItem('expenses', JSON.stringify(action.expenses))
+
+      return {
+        ...state,
+        expenses: JSON.parse(localStorage.getItem('expenses'))
       }
     default:
       return state
@@ -14,7 +25,7 @@ const BudgetReducer = (state, action) => {
 
 const initialState = {
   budget: 2000,
-  expenses : []
+  expenses : JSON.parse(localStorage.getItem('expenses'))
 }
 
 export const BudgetContext = createContext();
