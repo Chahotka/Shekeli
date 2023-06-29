@@ -5,6 +5,7 @@
   grid-template-columns: 1fr 1fr 1fr;
 
   &__item {
+    width: 100%;
     padding: 20px;
     border-radius: 10px;
   }
@@ -19,5 +20,14 @@
 
   &__spent {
     background: #885053c5;
+  }
+}
+
+@media (max-width:600px) {
+  .budget {
+    row-gap: 15px;
+    column-gap: 0;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
