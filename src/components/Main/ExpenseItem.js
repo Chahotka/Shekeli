@@ -1,6 +1,5 @@
 import React from 'react'
 
-// Написать стили для списка, добавить крест для удаления трат
 
 function ExpenseItem({id, name, cost, currency, deleteHandler }) {
 

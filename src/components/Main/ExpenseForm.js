@@ -25,36 +25,42 @@ function ExpenseForm() {
       type: 'ADD_EXPENSE',
       expense
     })
+
+    setName('')
+    setCost('')
   }
 
 
   return (
-    <form onSubmit={onSubmit} className='form'>
-      <div className="form__field">
-        <label className='form__label' htmlFor='name'>Name</label>
-        <input 
-          id='name'
-          type='text' 
-          value={name}
-          className='form__input'
-          autoComplete='off'
-          placeholder='Enter an expense name'
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className="form__field">
-        <label className='form__label' htmlFor='cost'>Cost</label>
-        <input 
-          id='cost'
-          type='number' 
-          value={cost}
-          className='form__input'
-          placeholder='Enter cost'
-          onChange={(e) => setCost(e.target.value)}
-        />
-      </div>
-      <button type='submit' className='form__button'>Add</button>
-    </form>
+    <>
+      <h2 className='expenses__title'>Add expense</h2>
+      <form onSubmit={onSubmit} className='form'>
+        <div className="form__field">
+          <label className='form__label' htmlFor='name'>Name</label>
+          <input 
+            id='name'
+            type='text'
+            value={name}
+            className='form__input'
+            autoComplete='off'
+            placeholder='Enter an expense name'
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="form__field">
+          <label className='form__label' htmlFor='cost'>Cost</label>
+          <input 
+            id='cost'
+            type='number' 
+            value={cost}
+            className='form__input'
+            placeholder='Enter cost'
+            onChange={(e) => setCost(e.target.value)}
+          />
+        </div>
+        <button type='submit' className='form__button'>Add</button>
+      </form>
+    </>
   )
 }
 

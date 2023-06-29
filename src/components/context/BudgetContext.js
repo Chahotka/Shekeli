@@ -1,6 +1,5 @@
 import { createContext, useReducer } from "react"
 
-// DELETE_EXPENSE удаляет все траты биля
 
 const BudgetReducer = (state, action) => {
   switch(action.type) {
