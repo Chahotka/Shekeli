@@ -9,7 +9,7 @@ function useRemaining() {
     setRemaining(
       budget - expenses.reduce((acc, val) => acc + val.cost, 0)
     )
-  }, [expenses])
+  }, [expenses, budget])
 
   return { remaining }
 }

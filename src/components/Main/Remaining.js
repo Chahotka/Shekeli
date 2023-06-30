@@ -4,8 +4,11 @@ import useRemaining from '../hooks/useRemaining'
 function Remaining({ currency }) {
   const { remaining } = useRemaining()
 
+
   return (
-    <p className='budget__remaining budget__item'>Remaining: { remaining }{ currency }</p>
+    <div className="budget__remaining budget__item">
+      <span>Remaining: { remaining }{ currency }</span>
+    </div>
   )
 }
 
