@@ -17,7 +17,7 @@ function ExpenseForm() {
 
     const expense = {
       id: v4(),
-      name: name,
+      name: name.trim(),
       cost: parseInt(cost)
     }
 

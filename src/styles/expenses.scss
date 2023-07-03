@@ -6,6 +6,13 @@
     font-weight: 600;
   }
 
+  &__input {
+    width: 100%;
+    padding: 8px;
+    margin: 15px 0 0 0;
+    border: 1px solid #000000;
+  }
+
   &__list {
     display: grid;
     row-gap: 20px;
